@@ -1,3 +1,8 @@
 import pandas as pd
 import numpy as np
-df=pd.read_csv(r,"
+df=pd.read_csv(r,"https://github.com/KrishnaKumar2002/Predict-sentiments-of-amazon-customers/commit/29245b32b9b50507a99d710e948dd399cf70e587")
+df.head()
+df.columns
+df['Helful%']=np.where(df['HelpfulnessDenominator']>0,df['HelpfulnessNumerator']/df['HelpfulnessDinomiator'],-1)
+df['Helpful%'].unique()
+d['%Upvote']=pd.cut(df['Helpful%'],bins=[-1,0,0.2,0.4,0.6,0.8,1],labels=['empty','0-20%','20-40%','40-60%','60-80%','80-100%'])
